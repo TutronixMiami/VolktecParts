@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+.env
+server/vendor/
+server/stripe-price-map.php
+

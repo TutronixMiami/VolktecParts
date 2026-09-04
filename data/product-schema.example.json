@@ -1,0 +1,22 @@
+{
+  "id": "stable-internal-id",
+  "sku": "VT-00001",
+  "name": "Product title",
+  "partNumber": "VW/OE part number",
+  "manufacturerNumber": "Maker part number",
+  "alternateNumbers": ["Interchange number"],
+  "brand": "Bosch",
+  "category": "Electrical & Ignition",
+  "price": 0,
+  "quantity": 1,
+  "condition": "New",
+  "description": "Searchable product description",
+  "images": ["assets/products/example-1.jpg"],
+  "fitment": [{"model": "Beetle", "from": 1968, "to": 1970}],
+  "engine": ["1600cc"],
+  "position": "Front left",
+  "shipping": "Calculated at checkout",
+  "notes": "Fitment or installation note",
+  "ebayItemNumber": ""
+}
+

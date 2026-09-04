@@ -1,9 +1,142 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Volkswagen replacement and performance parts from Volktec Parts in Miami.">
+  <meta name="theme-color" content="#073b5c">
+  <title>Volktec Parts | Volkswagen Parts Specialists</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#catalog">Skip to catalog</a>
+  <div class="utility-bar">
+    <div class="shell utility-inner">
+      <p>Volkswagen parts specialists &bull; Miami, Florida</p>
+      <p>Questions? <a href="mailto:sales@volktecparts.com">Talk to a parts specialist</a></p>
+    </div>
+  </div>
 
+  <header class="site-header">
+    <div class="shell nav-row">
+      <a class="brand" href="#top" aria-label="Volktec Parts home">
+        <img src="assets/volktec-logo.jpg" alt="Volktec">
+        <span>PARTS</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#catalog">Shop parts</a>
+        <a href="#fitment">Find your VW</a>
+        <a href="#about">Why Volktec</a>
+      </nav>
+      <button class="cart-button" type="button" data-open-cart aria-controls="cart-drawer">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6m4 13h.01M17 20h.01"/></svg>
+        Cart <span class="cart-count" data-cart-count>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Air-cooled to water-cooled</p>
+          <h1>The right part.<br><span>The right Volkswagen.</span></h1>
+          <p class="hero-lede">Search by part number or narrow the catalog by model and year. Real parts knowledge, without the guesswork.</p>
+          <form class="hero-search" data-search-form role="search">
+            <label class="sr-only" for="hero-query">Search products</label>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input id="hero-query" type="search" placeholder="Part number, name, or keyword" autocomplete="off">
+            <button type="submit">Find my part</button>
+          </form>
+          <div class="hero-proof" aria-label="Store benefits">
+            <span>✓ Fitment-first catalog</span><span>✓ Specialist support</span><span>✓ Secure checkout ready</span>
+          </div>
+        </div>
+        <aside class="fitment-card" id="fitment">
+          <div class="fitment-heading">
+            <span class="roundel">VW</span>
+            <div><p class="eyebrow">Garage</p><h2>Find parts that fit</h2></div>
+          </div>
+          <form data-fitment-form>
+            <label>Year<select name="year"><option value="">Any year</option></select></label>
+            <label>Model<select name="model" disabled><option value="">Select a year first</option></select></label>
+            <label>Engine<select name="engine" disabled><option value="">Select a model first</option></select></label>
+            <button type="submit">Show compatible parts <span>→</span></button>
+          </form>
+          <p class="fitment-note">Fitment information is a guide. Verify your VIN and part number before ordering.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="category-strip" aria-label="Product categories">
+      <div class="shell category-grid" data-categories></div>
+    </section>
+
+    <section class="browse-panel shell" aria-label="More ways to shop">
+      <div class="browse-block"><p class="eyebrow">Shop by category</p><div class="chip-list" data-all-categories></div></div>
+      <div class="browse-block"><p class="eyebrow">Shop by brand</p><div class="chip-list" data-brands></div></div>
+    </section>
+
+    <section class="catalog shell" id="catalog">
+      <div class="catalog-head">
+        <div><p class="eyebrow">Browse the shelves</p><h2>Featured parts</h2><p data-result-summary>Loading catalog…</p></div>
+        <div class="catalog-actions">
+          <label class="catalog-search"><span class="sr-only">Search catalog</span><input data-catalog-search type="search" placeholder="Search part # or name"></label>
+          <label class="sort-select"><span class="sr-only">Sort products</span><select data-sort><option value="featured">Featured</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name">Name A–Z</option></select></label>
+        </div>
+      </div>
+      <div class="active-filter" data-active-filter hidden></div>
+      <div class="product-grid" data-product-grid aria-live="polite"></div>
+      <div class="empty-state" data-empty hidden><h3>No exact match yet.</h3><p>Try a shorter part number, a product name, or clear your filters.</p><button type="button" data-clear-filters>Clear filters</button></div>
+      <nav class="pagination" data-pagination aria-label="Catalog pages"></nav>
+    </section>
+
+    <section class="model-section">
+      <div class="shell"><div class="section-title"><div><p class="eyebrow">Start with your Volkswagen</p><h2>Popular models</h2></div><p>From air-cooled icons to daily-driven water-cooled cars.</p></div><div class="model-grid" data-models></div></div>
+    </section>
+
+    <section class="trust-section">
+      <div class="shell trust-grid"><article><strong>511</strong><h3>Active-listing scale</h3><p>The catalog architecture is prepared for the complete inventory import.</p></article><article><strong>VW</strong><h3>Specialist knowledge</h3><p>Part numbers and fitment stay at the center of every listing.</p></article><article><strong>USA</strong><h3>Fast domestic shipping</h3><p>Shipping fields are ready for service and handling details.</p></article><article><strong>Direct</strong><h3>Secure purchasing</h3><p>Prepared for server-created, Stripe-hosted checkout.</p></article></div>
+    </section>
+
+    <section class="parts-help" id="about">
+      <div class="shell help-grid">
+        <div><p class="eyebrow">Built for VW people</p><h2>Parts are only useful when they fit.</h2></div>
+        <p>Volktec pairs a searchable catalog with practical fitment details. Each listing supports OEM and alternate part numbers, model generations, years, engines, and notes—ready to grow with the complete inventory.</p>
+        <a href="mailto:sales@volktecparts.com">Ask a specialist <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><a class="brand footer-brand" href="#top"><img src="assets/volktec-logo.jpg" alt="Volktec"><span>PARTS</span></a><p>Volkswagen replacement and performance parts, selected with care in Miami.</p></div>
+      <div><h3>Shop</h3><a href="#catalog">All parts</a><a href="#fitment">Find your VW</a><a href="mailto:sales@volktecparts.com">Parts help</a></div>
+      <div><h3>Important</h3><p>Volkswagen and other marks belong to their respective owners. Volktec is an independent parts retailer.</p></div>
+    </div>
+    <div class="shell legal"><span>© <span data-year></span> Volktec Parts.</span><span>Catalog preview — confirm product data before launch.</span></div>
+  </footer>
+
+  <div class="drawer-backdrop" data-cart-backdrop hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="cart-header"><div><p class="eyebrow">Your order</p><h2 id="cart-title">Shopping cart</h2></div><button type="button" data-close-cart aria-label="Close cart">×</button></div>
+    <div class="cart-items" data-cart-items></div>
+    <div class="cart-empty" data-cart-empty><div class="empty-box">□</div><h3>Your cart is empty</h3><p>Find the right part and it will stay here for you.</p><button type="button" data-close-cart>Continue shopping</button></div>
+    <div class="cart-footer" data-cart-footer hidden><div class="subtotal"><span>Subtotal</span><strong data-cart-subtotal>$0.00</strong></div><p>Shipping and taxes calculated at checkout.</p><button type="button" class="checkout-button" data-checkout>Secure checkout <span>→</span></button><p class="checkout-note" data-checkout-note></p></div>
+  </aside>
+  <div class="product-modal" data-product-modal hidden>
+    <div class="product-modal-backdrop" data-close-product></div>
+    <article class="product-detail" role="dialog" aria-modal="true" aria-labelledby="product-detail-title">
+      <button class="detail-close" type="button" data-close-product aria-label="Close product details">×</button>
+      <div class="detail-media"><div class="detail-image"><span>PRODUCT PHOTO<br>PLACEHOLDER</span></div><div class="thumb-row"><button class="active">Main view</button><button>Packaging</button><button>Part number</button></div></div>
+      <div class="detail-copy" data-product-detail></div>
+    </article>
+  </div>
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
 </body>
 </html>
+
